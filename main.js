@@ -22,18 +22,31 @@ Output =>
 [49, 20, 500]
 
 */
+// var arrOfNum2 = [1,5,2];
+function MultiByNum1OrNum2(arrOfNum2,number1,number2) {
+  // WRITE YOUR CODE UNDER THIS LINE  
+  var result = arrOfNum2.map(function(elem){
+    if (elem%number1===0) {
+      return elem*number1;
+    }
+    else{
+     return elem*number2;
+    }
 
-function MultiByNum1OrNum2() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+  }) 
+  return result;      
 }
+console.log(MultiByNum1OrNum2([1,5,2],2,6));
 
+ console.log(MultiByNum1OrNum2([7,2,50],7,10));
 /* Q2:
 Using Filter
 Create a function called longerAndYounger
 that takes an array of objects and 2 numbers as a parameter
 and return a new array with the object has 
-a name longer than the first parameter
-and in the same time less than the second parameters 
+a name longer than the second parameter
+and in the same time the age less than the third parameter 
+
 
 var arrOfObj1 = [
   { name: "alex" ,age:22},
@@ -57,11 +70,22 @@ Output =>
   { name: "mercer",age:26}
 ]
 */
-
-function longerAndYounger() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+var arrOfObj1 = [
+  { name: "alex" ,age:22},
+  { name: "mercer",age:26},
+  { name: "alice" ,age:33},
+  { name: "zaheer",age:35},
+  { name: "elizabeth",age:45}
+];
+function longerAndYounger(arrOfObj1,number1,number2) {
+  // WRITE YOUR CODE UNDER THIS LINE 
+var result=arrOfObj1.filter(function(elem) {
+  return elem.name.length > number1 && elem.age < number2;
+})
+return result;
 }
-
+console.log(longerAndYounger(arrOfObj1,4,30));
+console.log(longerAndYounger(arrOfObj1,3,30));
 /* Q3:
 Using Reduce
 Create a function called nameAndAllFoods
@@ -89,11 +113,30 @@ Output =>
 "alice, fried chiken, pizaa, burger, hot dog, eggs"
   
 */
-function nameAndAllFoods() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+var arrOfObj2 = [
+  { name: "alex", food: "fried chiken" },
+  { name: "mercer", food: "pizaa" },
+  { name: "alice", food: "burger" },
+  { name: "zaheer", food: "hot dog" },
+  { name: "elizabeth", food: "eggs" }
+];
+function nameAndAllFoods(arrOfObj2,number) {
+  // WRITE YOUR CODE UNDER THIS LINE  
+  var result= arrOfObj2.reduce(function(acc,elem,index) {
+    if (index===number) {
+      return elem.name+" "+ elem.food  ;
+    }
+     return acc +" "+ elem.food ;
+
+
+
+     
+  },"")   
+  return result;    
 }
 
-
+console.log(nameAndAllFoods(arrOfObj2,0));
+console.log(nameAndAllFoods(arrOfObj2,2));
 /*
 Q4
 You need to write the solution in the q4.html file

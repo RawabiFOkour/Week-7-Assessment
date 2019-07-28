@@ -3,10 +3,38 @@
 
 <head>
 	<!-- WRITE YOUR CODE UNDER THIS LINE          -->
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+	<style>
+		#no {
+			background-color: red;
+		}
+
+		#yes {
+			background-color: green;
+		}
+	</style>
+	<title>Q4</title>
 </head>
 
 <body>
 	<!-- WRITE YOUR CODE UNDER THIS LINE          -->
+	<div class="main">Main div is here</div>
+	<button id="no">Red</button>
+	<button id="yes">Green</button>
+	<script>
+		$(document).ready(function () {
+			$("#no").click(function () {
+				$(".main").css("color", 'red');
+			});
+		
+			$("#yes").click(function () {
+				$(".main").css("color", 'green');
+			});
+		});
+	</script>
 </body>
 
 </html>
