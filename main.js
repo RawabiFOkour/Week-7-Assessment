@@ -124,12 +124,9 @@ function nameAndAllFoods(arrOfObj2,number) {
   // WRITE YOUR CODE UNDER THIS LINE  
   var result= arrOfObj2.reduce(function(acc,elem,index) {
     if (index===number) {
-      return elem.name+" "+ elem.food  ;
+       acc=elem.name+acc  ;
     }
      return acc +" "+ elem.food ;
-
-
-
      
   },"")   
   return result;    
